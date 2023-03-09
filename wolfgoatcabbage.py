@@ -6,14 +6,13 @@ class WolfGoatCabbage(Problem):
     """The problem of transporting a [F]armer, [G]oat, [C]abbage, and [W]olf across a stream. W eats G, G eats C so these cannot be paired with 
      one another.  """
 
-    def __init__(self, initial, goal=[[{'G', 'F'}, {'F'}, {'W', 'F'}, {'G', 'F'}, {'C', 'F'}, {'F'}, {'G', 'F'}],
-                                      [{'G', 'F'}, {'F'}, {'C', 'F'}, {'G', 'F'}, {'W', 'F'}, {'F'}, {'G', 'F'}]]):
+    def __init__(self, initial, goal):
         """Defining the goal state and initializing the problem"""
         super().__init__(initial, goal)
 
     def actions(self, state):
         """Noting the various pairs when crossing the river. """
-        possible_pairs = [{''}]
+        possible_actions = self.initial.add
         raise NotImplementedError
 
     def result(self, state, action):
@@ -30,7 +29,7 @@ class WolfGoatCabbage(Problem):
 
 
 if __name__ == '__main__':
-    wgc = WolfGoatCabbage()
+    wgc = WolfGoatCabbage({'F', 'W', 'G', 'C'}, set())
     solution = depth_first_graph_search(wgc).solution()
     print(solution)
     solution = breadth_first_graph_search(wgc).solution()
