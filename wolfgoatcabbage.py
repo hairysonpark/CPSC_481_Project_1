@@ -10,9 +10,18 @@ class WolfGoatCabbage(Problem):
         """Defining the goal state and initializing the problem"""
         super().__init__(initial, goal)
 
+    def find_state(self, state):
+        """Return the current state in a given state"""
+
+        return state.copy(state)
+
     def actions(self, state):
-        """Noting the various pairs when crossing the river. """
-        possible_actions = self.initial.add
+        """Noting the various actions when crossing the river. """
+        possible_actions = {'G', 'F'}, {'F'}, {'C', 'F'}, {'G', 'F'}, {'W', 'F'}, {
+            'F'}, {'G', 'F'}, {'G', 'F'}, {'F'}, {'W', 'F'}, {'G', 'F'},
+        {'C', 'F'}, {'F'}, {'G', 'F'}
+
+        current_state = self.find_set(state)
         raise NotImplementedError
 
     def result(self, state, action):
