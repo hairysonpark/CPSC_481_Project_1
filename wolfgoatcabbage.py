@@ -32,6 +32,7 @@ class WolfGoatCabbage(Problem):
 
 if __name__ == '__main__':
     wgc = WolfGoatCabbage({'F', 'W', 'G', 'C'}, set())
+    wgc = WolfGoatCabbage.__init__({'F', 'W', 'G', 'C'}, set())
     solution = depth_first_graph_search(wgc).solution()
     print(solution)
     solution = breadth_first_graph_search(wgc).solution()
