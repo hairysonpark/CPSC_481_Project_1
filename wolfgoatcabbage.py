@@ -6,7 +6,7 @@ class WolfGoatCabbage(Problem):
     """The problem of transporting a [F]armer, [G]oat, [C]abbage, and [W]olf across a stream. W eats G, G eats C so these cannot be paired with 
      one another.  """
 
-    def __init__(self, initial, goal=set()):
+    def __init__(self, initial={'F', 'W', 'G', 'C'}, goal=set()):
         """Defining the goal state and initializing the problem"""
         super().__init__(initial, goal)
 
