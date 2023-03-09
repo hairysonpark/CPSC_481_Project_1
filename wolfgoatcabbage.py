@@ -8,7 +8,9 @@ class WolfGoatCabbage(Problem):
 
     def __init__(self, initial, goal):
         """Defining the goal state and initializing the problem"""
-        super().__init__(initial, goal)
+        #super().__init__(initial, goal)
+        self.initial = initial
+        self.goal = goal
 
     def actions(self, state):
         """Noting the various pairs when crossing the river. """
